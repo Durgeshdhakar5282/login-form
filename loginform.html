@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/97ebdf5864.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="email" id="email" required>
+                <label>Email</label>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" required>
+                <label>Password</label>
+                <i class="fa-solid fa-eye" id="togglePassword"></i>
+            </div>
+
+            <p><input type="checkbox">Remember me
+                <a href="forgotpassword.html">Forget Password</a>
+            </p>
+
+            <input id="btn" type="submit" value="Login">
+
+            <p>Don't have an account?
+                <a href="register.html">Register</a>
+            </p>
+        </form>
+    </div>
+
+    <script>
+        // Eye icon show/hide
+        const passField = document.getElementById("password");
+        const toggle = document.getElementById("togglePassword");
+
+        toggle.addEventListener("click", () => {
+            if (passField.type === "password") {
+                passField.type = "text";
+                toggle.classList.remove("fa-eye");
+                toggle.classList.add("fa-eye-slash");
+            } else {
+                passField.type = "password";
+                toggle.classList.remove("fa-eye-slash");
+                toggle.classList.add("fa-eye");
+            }
+        });
+    </script>
+</body>
+
+</html>
